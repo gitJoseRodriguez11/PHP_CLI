@@ -1,0 +1,17 @@
+[LOG]
+ENABLE = true
+ERRORLOG = true
+QUERYLOG = false
+SCREEN = true
+PATH = 'logs/'
+FILENAME = testCLI.log
+ERRORFILENAME = error_testCLI.log
+QUERYFILENAME = queries_testCLI.log
+DATEONFILENAME = true
+
+[DB]
+HOST = 1.0.0.721
+PORT = 6033
+DATABASE = base_de_gatos
+USERNAME = emanresu
+PASSWORD = password
