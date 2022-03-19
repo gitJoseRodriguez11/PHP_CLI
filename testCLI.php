@@ -7,10 +7,11 @@ ini_set('max_execution_time', 0);
 include_once __DIR__ . '/Clases/Logger.php';
 include_once __DIR__ . '/Clases/DBConn.php';
 include_once __DIR__ . '/Clases/Queries.php';
+global $argv;
+$config = parse_ini_file(__DIR__ . "/config.ini.example", true);
 
-$config = parse_ini_file(__DIR__ . "/config.ini", true);
 
-define('_IDCOLEGIO_', intval($argv[1]));
+define('_IDCOLEGIO_', intval(isset($argv[1])));
 
 $start = microtime(true);
 
@@ -35,11 +36,21 @@ $paramsDB =  array(
 );
 
 $dbConn = new DBconn();
+
 $dB = $dbConn->conectMySQL($paramsDB);
+
 
 $q = new Queries($logger, $dB);
 
-print_r(PHP_EOL . json_encode($q->getStudents(_IDCOLEGIO_)) . PHP_EOL);
+echo '<br> Crear una función que en base al 3° parametro de la ejecución genere un JSON con los alumnos del id del curso indicado.<br><br>';
+print_r(PHP_EOL . json_encode($q->getIdCurso(11846)) . PHP_EOL);
+
+echo '<br><br>Crear una función que en base al 2° parametro de la ejecución genere un JSON con los alumnos habilitados o los inhabilitados.<br><br>';
+print_r(PHP_EOL . json_encode($q->getHabilitados()) . PHP_EOL);
+
+echo '<br><br>colegio es  22<br><br>';
+print_r(PHP_EOL . json_encode($q->getStudents2(22)) . PHP_EOL);
+
 
 $end = microtime(true);
 $total = $end - $start;

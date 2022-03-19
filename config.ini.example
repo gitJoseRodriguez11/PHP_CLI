@@ -10,8 +10,8 @@ QUERYFILENAME = queries_testCLI.log
 DATEONFILENAME = true
 
 [DB]
-HOST = 1.0.0.721
-PORT = 6033
-DATABASE = base_de_gatos
-USERNAME = emanresu
-PASSWORD = password
+HOST = 10.208.5.20
+PORT = 3306
+DATABASE = INVERTEC
+USERNAME = root
+PASSWORD = 'expled08'
